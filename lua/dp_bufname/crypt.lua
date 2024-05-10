@@ -1,17 +1,5 @@
-local M = {}
-
-local sta, B = pcall(require, 'dp_base')
-
-M.source = B.getsource(debug.getinfo(1)['source'])
-M.lua = B.getlua(M.source)
-
-if not sta then return print('Dp_base is required!', debug.getinfo(1)['source']) end
-
-if B.check_plugins {
-      'folke/which-key.nvim',
-    } then
-  return
-end
+-- Copyright (c) 2024 liudepei. All Rights Reserved.
+-- create at 2024/05/10 23:40:03 星期五
 
 function M.decrypt()
   B.decrypt()
@@ -37,5 +25,3 @@ require 'which-key'.register {
   ['<leader>bc<leader>d'] = { function() M.decrypt_secret() end, 'bufname.crypt: decrypt_secret', mode = { 'n', 'v', }, silent = true, },
   ['<leader>bc<leader>e'] = { function() M.encrypt_secret() end, 'bufname.crypt: encrypt_secret', mode = { 'n', 'v', }, silent = true, },
 }
-
-return M
