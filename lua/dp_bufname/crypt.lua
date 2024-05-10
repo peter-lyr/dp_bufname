@@ -1,6 +1,8 @@
 -- Copyright (c) 2024 liudepei. All Rights Reserved.
 -- create at 2024/05/10 23:40:03 星期五
 
+local B = require 'dp_base'
+
 function M.decrypt()
   B.decrypt()
 end
